@@ -22,7 +22,7 @@ option(LIBIGL_USE_STATIC_LIBRARY "Use LibIGL as static library" ON)
 
 
 option(LIBIGL_WITH_ANTTWEAKBAR      "Use AntTweakBar"    ON)
-find_package(CGAL QUIET)
+find_package(CGAL QUIET COMPONENTS Core)
 option(LIBIGL_WITH_CGAL             "Use CGAL"           "${CGAL_FOUND}")
 option(LIBIGL_WITH_COMISO           "Use CoMiso"         ON)
 ### Cork is off by default since it fails to build out-of-the-box on windows
@@ -33,9 +33,6 @@ find_package(MATLAB QUIET)
 option(LIBIGL_WITH_MATLAB           "Use Matlab"         "${MATLAB_FOUND}")
 find_package(MOSEK  QUIET)
 option(LIBIGL_WITH_MOSEK            "Use MOSEK"          "${MOSEK_FOUND}")
-### Nanogui is off by default because it has many dependencies and generates
-### many issues
-option(LIBIGL_WITH_NANOGUI          "Use Nanogui menu"   OFF)
 option(LIBIGL_WITH_OPENGL           "Use OpenGL"         ON)
 option(LIBIGL_WITH_OPENGL_GLFW      "Use GLFW"           ON)
 option(LIBIGL_WITH_PNG              "Use PNG"            ON)
@@ -45,7 +42,7 @@ option(LIBIGL_WITH_VIEWER           "Use OpenGL viewer"  ON)
 option(LIBIGL_WITH_XML              "Use XML"            ON)
 
 if(LIBIGL_WITH_CGAL) # Do not remove or move this block, cgal strange build system fails without it
-  find_package(CGAL REQUIRED)
+  find_package(CGAL REQUIRED COMPONENTS Core)
   set(CGAL_DONT_OVERRIDE_CMAKE_FLAGS TRUE CACHE BOOL "CGAL's CMAKE Setup is super annoying ")
   include(${CGAL_USE_FILE})
 endif()

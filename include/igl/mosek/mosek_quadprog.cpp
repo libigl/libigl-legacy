@@ -28,7 +28,10 @@ igl::mosek::MosekData::MosekData()
   // 1e-4 seems safe
   // 1e-8 MOSEK DEFAULT SOLUTION
   douparam[MSK_DPAR_INTPNT_TOL_REL_GAP]=1e-8;
-  // Force using multiple threads, not sure if MOSEK is properly destorying
+#if MSK_VERSION_MAJOR >= 8
+  douparam[MSK_DPAR_INTPNT_QO_TOL_REL_GAP]=1e-12;
+#endif
+  // Force using multiple threads, not sure if MOSEK is properly destroying
   //extra threads...
 #if MSK_VERSION_MAJOR >= 7
   intparam[MSK_IPAR_NUM_THREADS] = 6;
@@ -50,7 +53,7 @@ igl::mosek::MosekData::MosekData()
   //   choose the right ordering method when really any of them are
   //   instantaneous
   intparam[MSK_IPAR_INTPNT_ORDER_METHOD] = MSK_ORDER_METHOD_NONE;
-  // 1.0 means optimizer is very leniant about declaring model infeasible
+  // 1.0 means optimizer is very lenient about declaring model infeasible
   douparam[MSK_DPAR_INTPNT_TOL_INFEAS] = 1e-8;
   // Hard to say if this is doing anything, probably nothing dramatic
   douparam[MSK_DPAR_INTPNT_TOL_PSAFE]= 1e2;
@@ -111,7 +114,9 @@ IGL_INLINE bool igl::mosek::mosek_quadprog(
   //}
   //mosek_guarded(MSK_linkfunctoenvstream(env,MSK_STREAM_LOG,NULL,printstr));
   // initialize mosek environment
+#if MSK_VERSION_MAJOR <= 7
   mosek_guarded(MSK_initenv(env));
+#endif
   // Create the optimization task
   mosek_guarded(MSK_maketask(env,m,n,&task));
   verbose("Creating task with %ld linear constraints and %ld variables...\n",m,n);

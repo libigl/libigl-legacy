@@ -23,16 +23,16 @@ namespace igl {
   public:
     // Input
     //mesh
-    const DerivedV &V;
-    const DerivedF &F;
+    const Eigen::PlainObjectBase<DerivedV> &V;
+    const Eigen::PlainObjectBase<DerivedF> &F;
     // TT is the same type as TTi? This is likely to break at some point
-    const DerivedTT &TT;
-    const DerivedTT &TTi;
+    const Eigen::PlainObjectBase<DerivedTT> &TT;
+    const Eigen::PlainObjectBase<DerivedTT> &TTi;
     const std::vector<std::vector<VFType> >& VF;
     const std::vector<std::vector<VFType> >& VFi;
     const std::vector<bool> &V_border; // bool
     //edges to cut
-    const DerivedC &Handle_Seams; // 3 bool
+    const Eigen::PlainObjectBase<DerivedC> &Handle_Seams; // 3 bool
 
     // total number of scalar variables
     int num_scalar_variables;
@@ -70,11 +70,11 @@ namespace igl {
     IGL_INLINE void FindInitialPos(const int vert, int &edge, int &face);
 
 
-    // intialize the mapping given an initial pos
+    // initialize the mapping given an initial pos
     // whih must be initialized with FindInitialPos
     IGL_INLINE void MapIndexes(const int  vert, const int edge_init, const int f_init);
 
-    // intialize the mapping for a given vertex
+    // initialize the mapping for a given vertex
     IGL_INLINE void InitMappingSeam(const int vert);
 
   };
@@ -187,7 +187,7 @@ FindInitialPos(const int vert,
 
 
 
-///intialize the mapping given an initial pos
+///initialize the mapping given an initial pos
 ///whih must be initialized with FindInitialPos
 template <typename DerivedV, typename DerivedF, typename VFType, typename DerivedTT, typename DerivedC>
 IGL_INLINE void igl::MeshCutterMini<DerivedV, DerivedF, VFType, DerivedTT, DerivedC>::

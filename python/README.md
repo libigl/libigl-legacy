@@ -32,7 +32,8 @@ The cmake script will complain if it is not able to find python. In that case
 you can specify the location of the interpreter by specifying the following
 cmake variables.
 
-MacOSX/Linux:
+
+MacOSX:
 
 ```cmake
 SET(PYTHON_LIBRARIES "/usr/local/Cellar/python3/3.5.0/Frameworks/Python.framework/Versions/3.5/lib/libpython3.5m.dylib")
@@ -45,6 +46,13 @@ Windows:
 SET(PYTHON_LIBRARIES "C:/Python35/libs/python35.lib")
 SET(PYTHON_INCLUDE_DIR "C:/Python35/include")
 ```
+
+On Linux you may need to install the development version of python:
+
+```bash
+sudo apt-get install python-dev
+```
+
 
 ## Tutorial
 
@@ -114,11 +122,11 @@ viewer.launch()
 
 ### Remote viewer
 
-Whe using the viewer from an interactive python shell (iPython), it is
+When using the viewer from an interactive python shell (iPython), it is
 inconvenient to let the viewer take control of the main thread for rendering
 purposes. We provide a simple wrapper for the viewer that allows to launch
 a remote process and send meshes to it via a TCP/IP socket. For more
-informations on how to use it see the documentation in [tcpviewer.py](tcpviewer.py)
+information on how to use it see the documentation in [tcpviewer.py](tcpviewer.py)
 
 ## Matlab
 
@@ -131,7 +139,7 @@ The python functions have exactly the same prototypes as their C++ counterpart.
 Docstrings for all available python functions are extracted from the C++ header files and compiled into the python module. To get help for a certain function, you can run `help(pyigl.<function_name>)` in the python console.
 
 In the scripts folder there is the script `generate_docstrings.py` that automatically generates python docstrings for a new function. You can run it with `generate_docstrings.py <path_to_cpp_header_files> <path_to_python_files>`. 
-The script depends on additional libraries (joblib, mako, clang), make sure to install them (e.g. through pip. python-clang is included in external/nanogui/ext/pybind11/tools/clang).
+The script depends on additional libraries (joblib, mako, clang), make sure to install them (e.g. through pip. python-clang is included in external/pybind11/tools/clang).
 
 
 ## Known Issues

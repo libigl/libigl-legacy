@@ -1,13 +1,21 @@
+// This file is part of libigl, a simple c++ geometry processing library.
+//
+// Copyright (C) 2017 Sebastian Koch <s.koch@tu-berlin.de> and Daniele Panozzo <daniele.panozzo@gmail.com>
+//
+// This Source Code Form is subject to the terms of the Mozilla Public License
+// v. 2.0. If a copy of the MPL was not distributed with this file, You can
+// obtain one at http://mozilla.org/MPL/2.0/.
 #include <Eigen/Dense>
 
 #include "python_shared.h"
-#include "modules/py_typedefs.h"
+
 
 #include <igl/AABB.h>
 #include <igl/ARAPEnergyType.h>
 #include <igl/MeshBooleanType.h>
 #include <igl/SolverStatus.h>
 #include <igl/active_set.h>
+#include <igl/adjacency_list.h>
 #include <igl/arap.h>
 #include <igl/avg_edge_length.h>
 #include <igl/barycenter.h>
@@ -36,6 +44,7 @@
 #include <igl/edge_lengths.h>
 #include <igl/edge_topology.h>
 #include <igl/eigs.h>
+#include <igl/exact_geodesic.h>
 #include <igl/find_cross_field_singularities.h>
 #include <igl/fit_rotations.h>
 #include <igl/floor.h>
@@ -55,7 +64,6 @@
 #include <igl/map_vertices_to_circle.h>
 #include <igl/massmatrix.h>
 #include <igl/min_quad_with_fixed.h>
-#include <igl/n_polyvector.h>
 #include <igl/normalize_row_lengths.h>
 #include <igl/normalize_row_sums.h>
 #include <igl/parula.h>
@@ -84,7 +92,6 @@
 #include <igl/slice_mask.h>
 #include <igl/slice_tets.h>
 #include <igl/sortrows.h>
-#include <igl/streamlines.h>
 #include <igl/triangle_triangle_adjacency.h>
 #include <igl/unique.h>
 #include <igl/unproject_onto_mesh.h>
@@ -92,7 +99,9 @@
 #include <igl/winding_number.h>
 #include <igl/writeMESH.h>
 #include <igl/writeOBJ.h>
-
+#include <igl/writePLY.h>
+#include <igl/readPLY.h>
+#include <igl/seam_edges.h>
 
 void python_export_igl(py::module &m)
 {
@@ -103,6 +112,7 @@ void python_export_igl(py::module &m)
 #include "py_igl/py_MeshBooleanType.cpp"
 #include "py_igl/py_SolverStatus.cpp"
 #include "py_igl/py_active_set.cpp"
+#include "py_igl/py_adjacency_list.cpp"
 #include "py_igl/py_arap.cpp"
 #include "py_igl/py_avg_edge_length.cpp"
 #include "py_igl/py_barycenter.cpp"
@@ -131,6 +141,7 @@ void python_export_igl(py::module &m)
 #include "py_igl/py_edge_lengths.cpp"
 #include "py_igl/py_edge_topology.cpp"
 #include "py_igl/py_eigs.cpp"
+#include "py_igl/py_exact_geodesic.cpp"
 #include "py_igl/py_find_cross_field_singularities.cpp"
 #include "py_igl/py_fit_rotations.cpp"
 #include "py_igl/py_floor.cpp"
@@ -150,7 +161,6 @@ void python_export_igl(py::module &m)
 #include "py_igl/py_map_vertices_to_circle.cpp"
 #include "py_igl/py_massmatrix.cpp"
 #include "py_igl/py_min_quad_with_fixed.cpp"
-#include "py_igl/py_n_polyvector.cpp"
 #include "py_igl/py_normalize_row_lengths.cpp"
 #include "py_igl/py_normalize_row_sums.cpp"
 #include "py_igl/py_parula.cpp"
@@ -179,7 +189,6 @@ void python_export_igl(py::module &m)
 #include "py_igl/py_slice_mask.cpp"
 #include "py_igl/py_slice_tets.cpp"
 #include "py_igl/py_sortrows.cpp"
-#include "py_igl/py_streamlines.cpp"
 #include "py_igl/py_triangle_triangle_adjacency.cpp"
 #include "py_igl/py_unique.cpp"
 #include "py_igl/py_unproject_onto_mesh.cpp"
@@ -187,5 +196,7 @@ void python_export_igl(py::module &m)
 #include "py_igl/py_winding_number.cpp"
 #include "py_igl/py_writeMESH.cpp"
 #include "py_igl/py_writeOBJ.cpp"
-
+#include "py_igl/py_writePLY.cpp"
+#include "py_igl/py_readPLY.cpp"
+#include "py_igl/py_seam_edges.cpp"
 }

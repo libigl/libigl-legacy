@@ -14,6 +14,8 @@
 #include <iostream>
 #include <cstdio>
 #include <fstream>
+#include <sstream>
+#include <iterator>
 
 template <typename Scalar, typename Index>
 IGL_INLINE bool igl::readOBJ(
@@ -46,7 +48,7 @@ IGL_INLINE bool igl::readOBJ(
   std::vector<std::vector<Index > > & FTC,
   std::vector<std::vector<Index > > & FN)
 {
-  // File open was succesfull so clear outputs
+  // File open was successful so clear outputs
   V.clear();
   TC.clear();
   N.clear();
@@ -54,7 +56,7 @@ IGL_INLINE bool igl::readOBJ(
   FTC.clear();
   FN.clear();
 
-  // variables an constants to assist parsing the .obj file
+  // variables and constants to assist parsing the .obj file
   // Constant strings to compare against
   std::string v("v");
   std::string vn("vn");
@@ -77,22 +79,18 @@ IGL_INLINE bool igl::readOBJ(
       char * l = &line[strlen(type)];
       if(type == v)
       {
-        double x[4];
-        int count =
-        sscanf(l,"%lf %lf %lf %lf\n",&x[0],&x[1],&x[2],&x[3]);
-        if(count != 3 && count != 4)
+        std::istringstream ls(&line[1]);
+        std::vector<Scalar > vertex{ std::istream_iterator<Scalar >(ls), std::istream_iterator<Scalar >() };
+
+        if (vertex.size() < 3)
         {
           fprintf(stderr,
-                  "Error: readOBJ() vertex on line %d should have 3 or 4 coordinates",
+                  "Error: readOBJ() vertex on line %d should have at least 3 coordinates",
                   line_no);
           fclose(obj_file);
           return false;
         }
-        std::vector<Scalar > vertex(count);
-        for(int i = 0;i<count;i++)
-        {
-          vertex[i] = x[i];
-        }
+      
         V.push_back(vertex);
       }else if(type == vn)
       {
