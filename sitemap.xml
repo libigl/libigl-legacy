@@ -4,15 +4,15 @@
     
     <url>
      <loc>http://libigl.github.io/libigl//</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>http://libigl.github.io/libigl//tutorial/tutorial/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <loc>http://libigl.github.io/libigl//tutorial/</loc>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,25 +21,25 @@
         
     <url>
      <loc>http://libigl.github.io/libigl//example-project/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://libigl.github.io/libigl//static-library/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://libigl.github.io/libigl//third-party/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://libigl.github.io/libigl//python-bindings/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -49,25 +49,25 @@
         
     <url>
      <loc>http://libigl.github.io/libigl//style-guidelines/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://libigl.github.io/libigl//CONTRIBUTING/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://libigl.github.io/libigl//before-submitting-pull-request/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://libigl.github.io/libigl//unit-tests/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -77,13 +77,13 @@
         
     <url>
      <loc>http://libigl.github.io/libigl//matlab-to-eigen/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://libigl.github.io/libigl//coding-guidelines/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -95,7 +95,7 @@
         
     <url>
      <loc>http://libigl.github.io/libigl//readme/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -104,7 +104,7 @@
     
     <url>
      <loc>http://libigl.github.io/libigl//faq/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -113,13 +113,13 @@
         
     <url>
      <loc>http://libigl.github.io/libigl//RELEASE_HISTORY/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://libigl.github.io/libigl//LICENSE/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

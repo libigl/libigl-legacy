@@ -35,7 +35,7 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../img/favicon.ico">
+      <link rel="shortcut icon" href="../favicon.ico">
       <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
     
     
@@ -254,7 +254,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tutorial/tutorial/" title="Tutorial" class="md-nav__link">
+    <a href="../tutorial/" title="Tutorial" class="md-nav__link">
       Tutorial
     </a>
   </li>
@@ -667,7 +667,7 @@
 <blockquote>
 <p><strong>Q:</strong> In other apps I have seen the the user is asked to specify singularities , and the then the rosy field is generated. But in libigl it seems like you have to specify faces and direction vectors to design a field. Is it possible to specify singularities?</p>
 </blockquote>
-<p>It is not possible to specify singularities right now. To specify the directions, the vectors should be in global coordinates (the vectors are 3D vectors, the libigl function takes care of projecting them onto the corresponding face), you can take a look here for a basic example that fixes only one face: <a href="http://libigl.github.io/libigl/tutorial/tutorial.html#505">http://libigl.github.io/libigl/tutorial/tutorial.html#505</a> <em>[Daniele]</em></p>
+<p>It is not possible to specify singularities right now. To specify the directions, the vectors should be in global coordinates (the vectors are 3D vectors, the libigl function takes care of projecting them onto the corresponding face), you can take a look here for a basic example that fixes only one face: <a href="http://libigl.github.io/libigl/tutorial/#global-seamless-integer-grid-parametrization">Example 505</a> <em>[Daniele]</em></p>
 <blockquote>
 <p><strong>Q:</strong> Does Libigl use the same 2D Triangle code (my search in the Libigl source code indicates NO, but a confirmation would be reassuring)?</p>
 </blockquote>
@@ -679,12 +679,12 @@
 <blockquote>
 <p><strong>Q:</strong> Do you have a ready to run command line program so that I can run a test with a few of my sample data sets?</p>
 </blockquote>
-<p>No, but it would be very easy to alter the <a href="http://libigl.github.io/libigl/tutorial/tutorial.html#609">boolean tutorial example</a> to do that. Basically drop the viewer and change the hardcoded paths to command line arguments and write out the result to an obj. <em>[Alec]</em></p>
+<p>No, but it would be very easy to alter the <a href="http://libigl.github.io/libigl/tutorial/#boolean-operations-on-meshes">boolean tutorial example</a> to do that. Basically drop the viewer and change the hardcoded paths to command line arguments and write out the result to an obj. <em>[Alec]</em></p>
 <blockquote>
 <p><strong>Q:</strong> I see that it can generate N-rosy fields, but is it possible to remesh based on the rosy field?</p>
 </blockquote>
 <p>Here is an example that uses libigl to produce a seamless parametrization:
-<a href="http://libigl.github.io/libigl/tutorial/tutorial.html#505">http://libigl.github.io/libigl/tutorial/tutorial.html#505</a></p>
+<a href="http://libigl.github.io/libigl/tutorial/#global-seamless-integer-grid-parametrization">Example 505</a></p>
 <p>If you want a mesh, you can pass this parametrization to libQEX (<a href="https://github.com/hcebke/libQEx">https://github.com/hcebke/libQEx</a>) to extract it. We do not have it built in in the tutorial due to a more restrictive licence used by libQEx. <em>[Daniele]</em></p>
 <blockquote>
 <p><strong>Q:</strong> I am having issues with parameterization (igl::miq). Even at 100 iterations, there are still distortions. What is the cause?</p>
